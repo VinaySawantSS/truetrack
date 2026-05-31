@@ -1,9 +1,23 @@
-# web (Phase 3)
+# TrueTrack web scorecard
 
-Next.js + React scorecard UI lives here: URL / "scan a demo store" input, an
-animated 0-100 gauge, the prioritized issue list, an "Apply TrueTrack fixes"
-action that reveals the generated config, the before/after score, and a
-"conversions recovered" counter.
+Vite + React + TypeScript single-page app. It is the clickable demo at
+truetrack.pages.dev and the surface community voters see.
 
-It calls the same `scanner` / `scoring` / `fixer` functions used by the CLI demo
-and the MCP server, so the score-jump logic is shared, not reimplemented.
+The scoring engine under `src/engine` is a vendored copy of the canonical engine
+in the repo's `/src` (the same code used by the CLI demo, the MCP server, and the
+vitest suite). It is vendored so this app builds standalone, with no dependency on
+the monorepo layout. The loop is deterministic on the bundled fixtures, so the
+demo never fails live: scan -> 41, apply fixes -> 5 paste-ready configs, re-scan
+-> 94, +34% conversions recovered.
+
+## Develop
+    npm install
+    npm run dev
+
+## Build
+    npm install
+    npm run build      # outputs to web/dist
+
+## Deploy (Cloudflare Pages)
+Build command: `npm install && npm run build`  |  Output directory: `dist`
+If using the dashboard Git integration, set the root directory to `web`.
