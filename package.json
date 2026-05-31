@@ -1,0 +1,19 @@
+{
+  "name": "truetrack",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An AI agent that scores your tracking, finds lost conversions, and generates the fixes in minutes.",
+  "license": "MIT",
+  "scripts": {
+    "demo": "tsx src/demo.ts",
+    "typecheck": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

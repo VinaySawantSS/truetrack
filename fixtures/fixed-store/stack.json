@@ -1,0 +1,9 @@
+{
+  "url": "https://demo-fixed-store.example",
+  "gtm": { "webContainer": true, "serverContainer": true, "containerId": "GTM-FIXED01" },
+  "ga4": { "installed": true, "viaServerSide": true, "measurementProtocol": true, "measurementId": "G-FIXED0001" },
+  "metaPixel": { "installed": true, "capi": true, "serverEvents": true, "pixelId": "2000000000000002" },
+  "consentMode": { "present": true, "defaultDenied": true, "blocksTagsWhenUnknown": false },
+  "attribution": { "model": "data-driven" },
+  "enhancedConversions": false
+}

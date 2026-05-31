@@ -1,0 +1,9 @@
+{
+  "url": "https://demo-broken-store.example",
+  "gtm": { "webContainer": true, "serverContainer": false, "containerId": "GTM-BROKEN1" },
+  "ga4": { "installed": true, "viaServerSide": false, "measurementProtocol": false, "measurementId": "G-BROKEN001" },
+  "metaPixel": { "installed": true, "capi": false, "serverEvents": false, "pixelId": "1000000000000001" },
+  "consentMode": { "present": true, "defaultDenied": true, "blocksTagsWhenUnknown": true },
+  "attribution": { "model": "last-click" },
+  "enhancedConversions": false
+}
