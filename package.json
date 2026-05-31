@@ -7,8 +7,12 @@
   "license": "MIT",
   "scripts": {
     "demo": "tsx src/demo.ts",
+    "mcp": "tsx src/mcp/stdio.ts",
     "typecheck": "tsc",
     "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
