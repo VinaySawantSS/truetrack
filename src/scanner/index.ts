@@ -14,14 +14,16 @@ export function scanFixture(name: FixtureName): StackSnapshot {
   return JSON.parse(raw) as StackSnapshot;
 }
 
-/**
- * TODO (Phase 1): live detection. Fetch the page and parse the gtag/GTM and
- * Meta Pixel snippets, read the dataLayer purchase schema and consent state,
- * and probe the server-side endpoint. Returns the same StackSnapshot shape so
- * scoring and fixing are identical for live and fixture inputs.
- */
-export async function scanSite(_url: string): Promise<StackSnapshot> {
-  throw new Error(
-    "Live scan is not implemented in the scaffold. Use scanFixture() for the demo loop.",
-  );
-}
+// Live detection (Fast scan). Same StackSnapshot shape as scanFixture, so scoring
+// and fixing are identical for live and fixture inputs. See ./live for guardrails,
+// the observed-vs-assumed evidence model, and the runtime-portability notes.
+export {
+  scanSite,
+  scanSiteWithEvidence,
+  detectStack,
+  normalizeUrl,
+  assertPublicHttps,
+  ScanError,
+  type ScanEvidence,
+  type ScanWithEvidence,
+} from "./live.js";

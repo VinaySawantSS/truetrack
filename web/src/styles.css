@@ -779,3 +779,177 @@ body {
     opacity: 1;
   }
 }
+
+/* ===================================================================
+   Fast scan (beta) additions. Additive only: nothing above is changed.
+   The frozen fixture path does not use any of these classes.
+   =================================================================== */
+
+.beta-tag {
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(255, 194, 51, 0.4);
+  border-radius: 999px;
+  padding: 4px 9px;
+  white-space: nowrap;
+}
+
+.examples {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+.examples-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.example-chip {
+  background: rgba(8, 11, 16, 0.6);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--ink-dim);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  padding: 7px 13px;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.example-chip:hover {
+  border-color: var(--green);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.url-error {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--red);
+  max-width: 48ch;
+}
+
+.scan-live-tag {
+  margin-left: 10px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(255, 194, 51, 0.4);
+  border-radius: 999px;
+  padding: 2px 8px;
+  vertical-align: middle;
+}
+
+/* ---------- evidence panel (observed vs assumed) ---------- */
+.evidence {
+  margin-top: 26px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px 28px 28px;
+  backdrop-filter: blur(8px);
+}
+
+.evidence-sub {
+  color: var(--ink-dim);
+  font-size: 14.5px;
+  max-width: 78ch;
+  margin: 4px 0 22px;
+}
+
+.evidence-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.evidence-col {
+  background: rgba(8, 11, 16, 0.45);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 16px 18px;
+}
+
+.evidence-h {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.evidence-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.evidence-col li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.evidence-empty {
+  font-size: 13.5px;
+  color: var(--faint);
+  margin: 0;
+}
+
+.ev-tick,
+.ev-dash {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+}
+
+.evidence-col.observed .ev-tick {
+  border-left: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  width: 9px;
+  height: 5px;
+  top: 5px;
+  left: 1px;
+  transform: rotate(-45deg);
+}
+
+.evidence-col.assumed .ev-dash {
+  border-top: 2px solid var(--amber);
+  height: 0;
+  width: 11px;
+  top: 10px;
+}
+
+.scan-limit {
+  margin-top: 18px;
+  background: rgba(255, 194, 51, 0.07);
+  border: 1px solid rgba(255, 194, 51, 0.28);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+.scan-limit strong {
+  color: var(--amber);
+}
+
+@media (max-width: 720px) {
+  .evidence-cols {
+    grid-template-columns: 1fr;
+  }
+}
